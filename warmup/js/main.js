@@ -7,21 +7,28 @@ If the number contains 5 as a factor, output 'Plang'.
 If the number contains 7 as a factor, output 'Plong'.
 If the number does not contain 3, 5, or 7 as a factor, output the number as a string.*/
 
-const number = function( num ) {
-  if( num % 3 ){
+const number = function( factorNum ) {
+  if( factorNum % 3 ) {
     console.log( 'pling' );
   }
-  if(num % 5 ){
+  if( factorNum % 5 ) {
     console.log( 'Plang' );
   }
-  if(num % 7 ){
+  if( factorNum % 7 ) {
     console.log( 'Plong' );
   }
-  if( num !% 3 ) && ( num !% 5 ) && ( num !% 7 ){
-
-  }
+  
+  // if( num !% 3 ) && ( num !% 5 ) && ( num !% 7 ){
+  //
+  // }
 
 }
 
-let text = number( 9 );
+let text = number( 3 );
 console.log( text );
+
+let text1 = number( 5 );
+console.log( text1 );
+
+let text2 = number( 7 );
+console.log( text2 );
