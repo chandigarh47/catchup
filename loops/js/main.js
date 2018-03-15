@@ -59,40 +59,37 @@ console.log(text);
 
 //Define a function maxOfThree that takes three numbers as arguments and returns the largest of them.
 
-const maxOfThree = function ( num1, num2, num3 ) {
-
-  if( num1 > num2 ) {
-    return num1;
-
-  } else if ( num2 > num3 ) {
-    return num2;
-
-  } if ( num3 > num1 ) {
-    return num3;
-  }
-}
-
-let text1 = maxOfThree(34,2,10);
-console.log(text1);
+// const maxOfThree = function ( text, num3 ) {
+//
+//   if( text > num3 ) {
+//     return  num3;
+// }
+// }
+//
+// let text1 = maxOfThree();
+// console.log(text1);
 
 //Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 
 const english = function(character) {
       let arr = [ 'a','e','i','o','u' ];
+// indexOf
 
-      for ( let  i = 0; i < arr.length; i++ ) {
+      for ( let  i = 0; i <= arr.length; i++ ) {
 
-          if( character === arr[i] ) {
-            console.log(arr[i]);
+          let str = arr.indexOf(character);
+          if( str !== -1 ){
             return true;
-          } else {
+
+          } else{
             return false;
           }
+
       }
 
 }
 
-let alphabet = english('e');
+let alphabet = english('i');
 console.log(alphabet);
 
 //Define a function sumArray and a function multiplyArray that sums and multiplies (respectively) all the numbers in an array of numbers.
@@ -100,52 +97,71 @@ console.log(alphabet);
 
 
 const sumArray = function() {
-  let sum = ['2','3','6','8'];
 
-  for ( let i = 0; i < sum.length; i++ ) {
+  let x = [1,2,3,4];
 
-   sum1 = sum + sum[i];
+let  y = 0;
+  for ( let i = 0; i < x.length; i++ ) {
+
+   y = y + x[i];
   }
 
-  return sum1;
+  return y;
 }
 
-sumArray();
+let math = sumArray();
+console.log(math);
 
 
 
 const multiplyArray = function() {
-  let mul = ['1','2','3','4'];
+  let mul = [1,2,3,4];
+
+  let n = 1;
 
   for ( let i = 0; i < mul.length; i++ ) {
-    mul[i]
+    n = n * mul[i];
   }
+  return n;
 }
+
+let num = multiplyArray();
+console.log(num);
 
 
 /*Bonus
 Define a function reverseString that computes the reversal of a string.
 For example, reverseString("jag testar") should return the string "ratset gaj".*/
 
-const reverseString = function( word ) {
-  let word1 = [ "jag tester" ];
-      word1.reverse();
-      return word1;
+const reverseString = function ( word ) {
+      let wordOne = [ "j","a","g","t","e","s","t","e","r" ];
+      let flip = wordOne.reverse();
+      return flip;
 
 }
 
-reverseString("jag testar");
+ let word1 = reverseString( "jag tester" );
+ console.log(word1);
 
 /*Write a function findLongestWord that takes an array of words and returns the length of the longest one.*/
 
 
-const findLongestWord = function( ) {
-      let find = [ 'hello','game','home','congratulations' ];
+const findLongestWord = function( list ) {
 
-      for ( let i = 0; i < find.length; i++ ) {
+    let length = 0;
 
-      console.log( find.length );
+    for ( let i = 0; i < listOfWords.length; i++ ) {
+    if( list[ i ].length > length ){
+        length = list[ i ].length;
   }
 
 }
-findLongestWord();
+    return length;
+
+}
+
+
+let listOfWords = [ 'hello','game','home','congratulations' ];
+
+let longestWord = findLongestWord(listOfWords);
+console.log(longestWord);
