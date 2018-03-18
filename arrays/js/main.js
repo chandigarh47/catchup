@@ -17,12 +17,18 @@ Pretend you don't know the word, and call guessLetter multiple times with variou
 
 const theWord = [ "F","O","X" ];
 const theLetter = [ "_","_","_" ];
+let reward = 0;
+let multiply = 0;
+
+let right = [];
+let wrong = ['w', 'd', 'i'];
+
 
 const guessLetter = function( letter ) {
 
       for ( let i = 0; i < theWord.length; i++ ) {
         if ( letter === theWord[i] ){
-          console.log( `you found a ${ word[ i ] }` );
+          console.log( `you found a ${ theWord[ i ] }` );
             theLetter[ i ] = theWord[ i ];
             break;
         } else {
@@ -38,6 +44,63 @@ const guessLetter = function( letter ) {
         }
 
 }
+
+let test = true;
+      const random = function( letter ) {
+
+        let number = Math.floor(Math.random() * Math.floor(10) +1 );
+        if(test){
+          multiply += 1;
+
+          console.log(`you are reward with ${ number }`);
+          reward += number * multiply;
+          console.log(multiply);
+        } else{
+          multiply = 0;
+          reward -= number;
+          console.log(multiply);
+        }
+        return reward;
+
+      }
+
+      random();
+
+const arrays = function( letter ) {
+
+      for ( let i = 0; i < right.length; i++) {
+        if( letter === right[i] ) {
+           console.log(right);
+           console.log(`the letter has already guessed`);
+           return;
+        }
+}
+          for ( let i = 0; i < theWord.length; i++) {
+            if ( letter === theWord[i] ) {
+               right.push(letter);
+           } else {
+             //console.log('hello');
+              for ( let i = 0; i < wrong.length; i++) {
+
+                if( letter === wrong[i] ) {
+                    console.log('the letter is already guessed');
+                    return;
+              }
+              wrong.push( letter );
+              console.log(wrong);
+
+           }
+
+        }
+
+    }
+
+  }
+
+
+
+
+
       const guessArray = function( array1,array2 ) {
         let game = theWord.join('');
         let game1 = theLetter.join('');
