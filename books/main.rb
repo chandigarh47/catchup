@@ -9,6 +9,7 @@ end
 
 
 get '/book' do
+  binding.pry
   book_url = "https://www.googleapis.com/books/v1/volumes?q=title:jaws"
   @book_info = HTTParty.get book_url;
   @book_cover = @book_info["items"].first["volumeInfo"]["imageLinks"]["thumbnail"]
