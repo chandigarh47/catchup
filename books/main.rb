@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'stock_quote'
+require 'httparty'
 
 get '/' do
   erb :home # HTML file with embedded ruby
