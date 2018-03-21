@@ -98,20 +98,22 @@ Now store a fahrenheit temperature into a variable.
 
 Convert it to celsius and output "NN°F is NN°C."*/
 
-const celsiusToFahrenheit = function() {
-  let celscius = 40;
-  let convert = ( 20 * 1.8 ) + 32;
-      return`${ celscius }°C is ${ convert }°F`;
+const celsiusToFahrenheit = function( celscius ) {
+
+       fahrenheit = ( ( 20 * 1.8 ) + 32 ) * celscius;
+       return fahrenheit;
 }
 
-  let calculation = celsiusToFahrenheit();
-      console.log(calculation);
+        let calculation = celsiusToFahrenheit( 18 );
+        console.log( calculation );
 
-const fahrenheitToCelsius = function() {
-  let fahrenheit = 20;
-  let convert1 = ( 20 - 32 ) * ( 5 / 9 );
-  return `${ fahrenheit }°F is ${ convert1 }°C.`;
+
+
+const fahrenheitToCelsius = function( fahrenheit ) {
+
+        celscius = ( ( 20 - 32 ) * ( 5 / 9 ) ) * fahrenheit;
+        return celscius;
 }
 
-  let calc = fahrenheitToCelsius();
-  console.log(calc);
+        let calc = fahrenheitToCelsius( 15 );
+        console.log( calc );

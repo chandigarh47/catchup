@@ -14,16 +14,15 @@ cinnamon
 cumin
 cocoa*/
 
-
 const potatoCurry = {
       Ingredients:[ "cumin","potato",
                   "cookingoil",
-                  "tomatoes"],
+                  "tomatoes" ],
   serves: 5
 }
 
-console.log(potatoCurry["Ingredients"][0]);
-console.log(potatoCurry.serves);
+for( let prop in potatoCurry )
+console.log( "p." + prop + " = " + potatoCurry[prop] );
 
 
 
@@ -120,9 +119,41 @@ a923-3211-9c01-1112 invalid characters
 1111-1111-1111-1110 sum less than 16
 6666-6666-6666-6661 odd final number*/
 
-const validateCreditCard = function() {
-  return true;
 
+
+
+const validateCreditCard = function( creditCard ) {
+  //console.log(creditCard.length);
+
+    let number = creditCard.split("-").join('')
+    console.log('this is the number after split '+ number.length);
+
+    if ( number.length !== 16 ) {
+      return false
+    }
+
+    if ( isNaN( Number(number) ) ) {
+      return false
+    }
+
+    if ( ( +number % 2 !== 0 ) ) {
+      return false
+    }
+
+    console.log(number);
+     let sum = 0
+    for (var i = 0; i < number.length; i++) {
+      sum = sum +(number[i])
+      console.log(sum);
+    }
+    if ( sum < 16 ) {
+      return false
+      console.log(sum);
+    }
+
+     return true
+console.log('connected');
 }
 
-validateCreditCard();
+let result = validateCreditCard("6666-6666-6666-6666");
+console.log(result);

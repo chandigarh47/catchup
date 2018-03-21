@@ -7,28 +7,36 @@ If the number contains 5 as a factor, output 'Plang'.
 If the number contains 7 as a factor, output 'Plong'.
 If the number does not contain 3, 5, or 7 as a factor, output the number as a string.*/
 
-const number = function( factorNum ) {
-  if( factorNum % 3 ) {
-    console.log( 'pling' );
-  }
-  if( factorNum % 5 ) {
-    console.log( 'Plang' );
-  }
-  if( factorNum % 7 ) {
-    console.log( 'Plong' );
-  }
-  
-  // if( num !% 3 ) && ( num !% 5 ) && ( num !% 7 ){
-  //
-  // }
+const number = function ( factorNum ) {
+  console.log(factorNum);
 
+  let text1 = "";
+
+  if ( factorNum % 3 === 0 ) {
+    text1 = text1 + "Pling";
+  }
+
+  if ( factorNum % 5 === 0 ) {
+    text1 = text1 + "Plang";
+  }
+
+  if ( factorNum % 7 === 0 ) {
+    text1 = text1 + "Plong";
+  }
+
+
+
+  if ( ( factorNum % 3 !== 0 ) && ( factorNum % 5 !== 0 ) && ( factorNum % 7 !== 0 ) ){
+  
+      text1 = factorNum.toString();
+
+  }
+
+  return text1;
 }
 
-let text = number( 3 );
-console.log( text );
+  let text = number ( 34 );
 
-let text1 = number( 5 );
-console.log( text1 );
+  console.log("this is the actual bit we want ", text);
 
-let text2 = number( 7 );
-console.log( text2 );
+  // console.log( text );
